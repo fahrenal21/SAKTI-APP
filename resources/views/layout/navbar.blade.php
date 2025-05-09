@@ -15,7 +15,7 @@
 
     </ul>
 
-    <p class="navbar-text"><span class="label bg-success">Online11</span></p>
+    <p class="navbar-text"><span class="label bg-success">Online</span></p>
 
     <ul class="nav navbar-nav navbar-right">
 
