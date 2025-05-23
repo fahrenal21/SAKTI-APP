@@ -50,7 +50,7 @@ class PegawaiSeeder extends Seeder
                 'jml_anak' => $relg,
                 'no_hp' => $faker->phoneNumber,
                 'email' => $email[$i],
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('admin'),
                 'tgl_masuk' => $faker->date,
                 'id_atasan' => NULL,
                 'id_jabatan' => $jbtn,
