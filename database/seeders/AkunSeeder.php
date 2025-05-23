@@ -21,14 +21,14 @@ class AkunSeeder extends Seeder
                 'name' => 'ini akun Admin',
                 'email' => 'admin@example.com',
                 'level' => 'admin',
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('admin'),
             ],
             [
                 'username' => 'user',
                 'name' => 'ini akun User (non admin)',
                 'email' => 'user@example.com',
                 'level' => 'editor',
-                'password' => bcrypt('123456'),
+                'password' => bcrypt('admin'),
             ],
         ];
 
