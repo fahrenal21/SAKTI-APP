@@ -30,7 +30,7 @@
     <div class="panel bg-info">
         <div class="panel-heading">
             <em>
-                <h6> Halaman ini untuk mengubah atribut menu seperti Nama menu, Icon di dalam SIPEGAWAI</h6>
+                <h6> Halaman ini untuk mengubah atribut menu seperti Nama menu, Icon di dalam SAKTI-APP</h6>
             </em>
             <div class="heading-elements">
                 <ul class="icons-list">

@@ -30,7 +30,7 @@
     <div class="panel bg-info">
         <div class="panel-heading">
             <em>
-                <h6> Halaman ini digunakan untuk mengedit hak akses pada setiap role yang ada di Aplikasi SIPEGAWAI ini.
+                <h6> Halaman ini digunakan untuk mengedit hak akses pada setiap role yang ada di Aplikasi SAKTI-APP ini.
                 </h6>
             </em>
             <div class="heading-elements">

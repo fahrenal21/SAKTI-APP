@@ -442,13 +442,8 @@
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td class="content-block">
-                                    <span class="apple-link">SIPEGAWAI</span>
+                                    <span class="apple-link">SAKTI-APP</span>
                                     <br> Email Notification <a href="#"></a>.
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="content-block powered-by">
-                                    Powered by <a href="http://htmlemail.io">HTMLemail</a>.
                                 </td>
                             </tr>
                         </table>

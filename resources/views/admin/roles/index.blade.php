@@ -28,7 +28,7 @@
         <div class="panel bg-info">
             <div class="panel-heading">
                 <em>
-                    <h6>Ini adalah halaman yang menampilkan semua role di dalam SIPEGAWAI ini, secara default hanya Super
+                    <h6>Ini adalah halaman yang menampilkan semua role di dalam SAKTI-APP ini, secara default hanya Super
                         Admin yang bisa mengedit fungsi role.
                     </h6>
                 </em>
