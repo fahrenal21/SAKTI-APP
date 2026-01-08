@@ -19,6 +19,7 @@
     <link href="{{ URL::to('/admin') }}/assets/css/core.css" rel="stylesheet" type="text/css">
     <link href="{{ URL::to('/admin') }}/assets/css/components.css" rel="stylesheet" type="text/css">
     <link href="{{ URL::to('/admin') }}/assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="{{ URL::to('/css') }}/custom.css" rel="stylesheet" type="text/css">
     <!-- Page level plugins -->
     <script src="{{ URL::to('/chart') }}/Chart.min.js"></script>
     <!-- /global stylesheets -->
@@ -119,8 +120,7 @@
                     @yield('content')
 
                     <!-- Footer -->
-                    <div class="footer text-muted">&copy; 2025. <a href="#">SAKTI PT. Sri Rezeki Elektrindo</a> by <a
-                            href="#" target="_blank">BlackDragon PPSI</a>
+                    <div class="footer text-muted">&copy; 2026. <a href="#">SAKTI {{ $perusahaan->nama ?? 'Perusahaan' }}</a>
                     </div>
                     <!-- /footer -->
 

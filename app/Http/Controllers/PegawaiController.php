@@ -304,6 +304,7 @@ class PegawaiController extends Controller
             $path = Storage::putFileAs('public/images', $request->file('imgupload'), $imgname);
 
             $input = $request->all();
+            $input['path'] = $imgname; // Set path to new image filename
             $pegawai = Pegawai::find($id);
             $pegawai->update($input);
 

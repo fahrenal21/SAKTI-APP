@@ -34,9 +34,10 @@
                 <nav class="navbar site-navbar offcanvas-active navbar-expand-lg px-0">
                     <!-- Brand Logo-->
                     <div class="brand-logo d-inline-block">
-                        <a href="#">
+                        <a href="#" style="display: flex; align-items: center; text-decoration: none;">
                             <!-- light version logo (logo must be black)-->
-                            <img src="{{ URL::to('/admin') }}/assets/images/logo.png" alt="">
+                            <img src="{{ URL::to('/admin') }}/assets/images/logo-sakti.png" alt="SAKTI Logo" style="height: 40px; width: auto;">
+                            <span style="margin-left: 10px; font-size: 20px; font-weight: 700; color: #1a237e; letter-spacing: 2px;">SAKTI</span>
                             <!-- Dark version logo (logo must be White)-->
                         </a>
                     </div>

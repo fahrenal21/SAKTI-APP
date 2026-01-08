@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Cuti;
 use App\Models\Pegawai;
+use App\Models\Perusahaan;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
@@ -46,6 +47,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
         view()->composer('*', function ($view) {
+
+            // Share perusahaan ke semua view
+            $perusahaan = Perusahaan::orderBy('id', 'desc')->first();
+            $view->with('perusahaan', $perusahaan);
 
             if (Auth::check()) {
                 $id_peg_non_bawahan = Pegawai::where('id_atasan', null)->pluck('id');

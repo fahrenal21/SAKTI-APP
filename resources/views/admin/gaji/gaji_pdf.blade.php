@@ -57,15 +57,16 @@
         }
 
         .company-employee-info {
-            display: flex;
-            justify-content: space-between;
+            width: 100%;
             margin-bottom: 15px; 
             padding-bottom: 15px; 
             border-bottom: 1px solid #E8E8E8; 
         }
 
         .company-employee-info > div {
-            width: 48.5%; 
+            width: 48.5%;
+            display: inline-block;
+            vertical-align: top;
         }
 
         .company-employee-info h3 {
@@ -98,14 +99,23 @@
         }
 
         .financial-details {
-            display: flex;
-            justify-content: space-between; 
-            gap: 20px; 
+            width: 100%;
             margin-bottom: 20px; 
         }
 
+        .financial-details-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px 0;
+        }
+
+        .financial-details-table td {
+            width: 50%;
+            vertical-align: top;
+        }
+
         .financial-section {
-            flex: 1; 
+            width: 100%;
         }
         
         .section-title {
@@ -142,6 +152,9 @@
 
         .details-table .label {
             text-align: left;
+            width: 55%;
+            color: #3C4043 !important;
+            font-weight: 400;
         }
 
         .details-table .amount {
@@ -170,12 +183,15 @@
             background-color: #E8F0FE; 
             border: 1px solid #D1E0FF; 
             border-radius: 4px;
-            /* text-align: center; Dihapus agar tabel bisa diatur lebarnya */
         }
 
         .net-pay-section table {
-            width: auto; /* Agar tabel tidak full width dan bisa di tengah */
-            margin: 0 auto; /* Untuk menengahkan tabel */
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .net-pay-section td {
+            vertical-align: middle;
         }
 
         .net-pay-section .label {
@@ -183,17 +199,17 @@
             font-weight: bold;
             color: #2A3B47; 
             text-align: left;
-            padding-right: 0; /* Dihapus karena ada kolom titik dua sendiri */
-            padding-top: 10px;
+            padding: 10px 0;
+            vertical-align: middle;
         }
 
-        /* PENYESUAIAN UNTUK KESEJAJARAN GAJI BERSIH */
         .net-pay-section .colon {
             font-size: 14px;
             font-weight: bold;
             color: #2A3B47;
             text-align: center;
-            padding: 0 5px 0 5px; /* Atur padding kiri kanan untuk titik dua */
+            padding: 10px 8px;
+            vertical-align: middle;
         }
 
         .net-pay-section .amount {
@@ -201,7 +217,8 @@
             font-weight: bold;
             color: #2A3B47; 
             text-align: right;
-            padding: 0 5px 0 5px;
+            padding: 10px 5px;
+            vertical-align: middle;
         }
 
         .payslip-footer {
@@ -234,154 +251,166 @@
 
         <div class="payslip-body">
             <section class="company-employee-info">
-                <div class="company-details">
-                    <h3>Informasi Umum</h3>
-                    <table class="info-table">
-                        <tr>
-                            <td>Periode Gaji</td>
-                            <td>:</td>
-                            <td>{{ date('d M Y', strtotime($period_dari)) . ' - ' . date('d M Y', strtotime($period_ke)) }}</td>
-                        </tr>
-                         <tr>
-                            <td>Tanggal Cetak</td>
-                            <td>:</td>
-                            <td>{{ date('d M Y') }}</td>
-                        </tr>
-                        <tr>
-                            <td>Divisi</td>
-                            <td>:</td>
-                            <td>{{ $pegawai->divisi->nm_divisi }}</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="employee-details-section"> 
-                    <h3>Data Pegawai</h3>
-                    <table class="info-table">
-                        <tr>
-                            <td>ID Pegawai</td>
-                            <td>:</td>
-                            <td>{{ $pegawai->id }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama Pegawai</td>
-                            <td>:</td>
-                            <td>{{ $pegawai->nama }}</td>
-                        </tr>
-                        <tr>
-                            <td>Jabatan</td>
-                            <td>:</td>
-                            <td>{{ $pegawai->jabatan->nm_jabatan }}</td>
-                        </tr>
-                    </table>
-                </div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 50%; vertical-align: top;">
+                            <h3>Informasi Umum</h3>
+                            <table class="info-table">
+                                <tr>
+                                    <td>Periode Gaji</td>
+                                    <td>:</td>
+                                    <td>{{ date('d M Y', strtotime($period_dari)) . ' - ' . date('d M Y', strtotime($period_ke)) }}</td>
+                                </tr>
+                                 <tr>
+                                    <td>Tanggal Cetak</td>
+                                    <td>:</td>
+                                    <td>{{ date('d M Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Divisi</td>
+                                    <td>:</td>
+                                    <td>{{ $pegawai->divisi->nm_divisi }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td style="width: 50%; vertical-align: top;">
+                            <h3>Data Pegawai</h3>
+                            <table class="info-table">
+                                <tr>
+                                    <td>ID Pegawai</td>
+                                    <td>:</td>
+                                    <td>{{ $pegawai->id }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Pegawai</td>
+                                    <td>:</td>
+                                    <td>{{ $pegawai->nama }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jabatan</td>
+                                    <td>:</td>
+                                    <td>{{ $pegawai->jabatan->nm_jabatan }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
             </section>
 
             <section class="financial-details">
-                <div class="financial-section earnings-section">
-                    <h4 class="section-title earnings-title">RINCIAN PEMASUKAN</h4>
-                    <table class="details-table">
-                        <tr>
-                            <td class="label">Gaji Pokok</td>
-                            <td class="currency-prefix">:</td>
-                            <td class="amount">@currency($gaji_pokok)</td>
-                        </tr>
-                        @foreach ($att_tunjangan as $p)
-                            @if ($p->is_active != 0)
-                                <tr>
-                                    <td class="label">{{ $p->nama }}</td>
-                                    <td class="currency-prefix">:</td>
-                                    <td class="amount">@currency($p->jumlah)</td>
-                                </tr>
-                            @endif
-                        @endforeach
-                        @if ($tunj_status != 0)
-                            <tr>
-                                <td class="label">{{ 'Tunjangan Keluarga' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($tunj_status)</td>
-                            </tr>
-                        @endif
-                        @if ($tunj_anak != 0)
-                            <tr>
-                                <td class="label">{{ 'Tunjangan Anak' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($tunj_anak)</td>
-                            </tr>
-                        @endif
-                        @if ($tunj_kinerja != 0)
-                            <tr>
-                                <td class="label">{{ 'Tunjangan Kinerja' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($tunj_kinerja)</td>
-                            </tr>
-                        @endif
-                        <tr class="total-row total-row-pemasukan">
-                            <td class="label">Total Pemasukan</td>
-                            <td class="currency-prefix"></td> <td class="amount">@currency($tot_pemasukan)</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="financial-section deductions-section">
-                    <h4 class="section-title deductions-title">RINCIAN POTONGAN</h4>
-                    <table class="details-table">
-                        @if ($jml_ptgn_telat != 0)
-                            <tr>
-                                <td class="label">Potongan Keterlambatan</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($jml_ptgn_telat)</td>
-                            </tr>
-                        @endif
-                        @if ($jml_ptgn_bolos != 0)
-                            <tr>
-                                <td class="label">Potongan Membolos</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($jml_ptgn_bolos)</td>
-                            </tr>
-                        @endif
-                        @if ($pot_bpjs_kes != 0)
-                            <tr>
-                                <td class="label">{{ 'Iuran BPJS Kesehatan' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($pot_bpjs_kes)</td>
-                            </tr>
-                        @endif
-                        @if ($pot_bpjs_ket != 0)
-                            <tr>
-                                <td class="label">{{ 'Iuran BPJS Ketenagakerjaan (JHT)' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($pot_bpjs_ket)</td>
-                            </tr>
-                        @endif
-                        @if ($pot_pph != 0)
-                            <tr>
-                                <td class="label">{{ 'Potongan PPH 21' }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($pot_pph)</td>
-                            </tr>
-                        @endif
-                        @foreach ($att_potongan as $p)
-                            <tr>
-                                <td class="label">{{ $p->nama }}</td>
-                                <td class="currency-prefix">:</td>
-                                <td class="amount">@currency($p->jumlah)</td>
-                            </tr>
-                        @endforeach
-                        <tr class="total-row total-row-potongan">
-                            <td class="label">Total Potongan</td>
-                            <td class="currency-prefix"></td> <td class="amount">@currency($jml_ptgn)</td>
-                        </tr>
-                    </table>
-                </div>
+                <table class="financial-details-table">
+                    <tr>
+                        <td>
+                            <div class="financial-section earnings-section">
+                                <h4 class="section-title earnings-title">RINCIAN PEMASUKAN</h4>
+                                <table class="details-table">
+                                    <tr>
+                                        <td class="label">Gaji Pokok</td>
+                                        <td class="currency-prefix">:</td>
+                                        <td class="amount">@currency($gaji_pokok)</td>
+                                    </tr>
+                                    @foreach ($att_tunjangan as $p)
+                                        @if ($p->is_active != 0)
+                                            <tr>
+                                                <td class="label">{{ $p->nama }}</td>
+                                                <td class="currency-prefix">:</td>
+                                                <td class="amount">@currency($p->jumlah)</td>
+                                            </tr>
+                                        @endif
+                                    @endforeach
+                                    @if ($tunj_status != 0)
+                                        <tr>
+                                            <td class="label">Tunjangan Keluarga</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($tunj_status)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($tunj_anak != 0)
+                                        <tr>
+                                            <td class="label">Tunjangan Anak</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($tunj_anak)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($tunj_kinerja != 0)
+                                        <tr>
+                                            <td class="label">Tunjangan Kinerja</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($tunj_kinerja)</td>
+                                        </tr>
+                                    @endif
+                                    <tr class="total-row total-row-pemasukan">
+                                        <td class="label">Total Pemasukan</td>
+                                        <td class="currency-prefix"></td>
+                                        <td class="amount">@currency($tot_pemasukan)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="financial-section deductions-section">
+                                <h4 class="section-title deductions-title">RINCIAN POTONGAN</h4>
+                                <table class="details-table">
+                                    @if ($jml_ptgn_telat != 0)
+                                        <tr>
+                                            <td class="label">Potongan Keterlambatan</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($jml_ptgn_telat)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($jml_ptgn_bolos != 0)
+                                        <tr>
+                                            <td class="label">Potongan Membolos</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($jml_ptgn_bolos)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($pot_bpjs_kes != 0)
+                                        <tr>
+                                            <td class="label">Iuran BPJS Kesehatan</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($pot_bpjs_kes)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($pot_bpjs_ket != 0)
+                                        <tr>
+                                            <td class="label">Iuran BPJS Ketenagakerjaan (JHT)</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($pot_bpjs_ket)</td>
+                                        </tr>
+                                    @endif
+                                    @if ($pot_pph != 0)
+                                        <tr>
+                                            <td class="label">Potongan PPH 21</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($pot_pph)</td>
+                                        </tr>
+                                    @endif
+                                    @foreach ($att_potongan as $p)
+                                        <tr>
+                                            <td class="label">{{ $p->nama }}</td>
+                                            <td class="currency-prefix">:</td>
+                                            <td class="amount">@currency($p->jumlah)</td>
+                                        </tr>
+                                    @endforeach
+                                    <tr class="total-row total-row-potongan">
+                                        <td class="label">Total Potongan</td>
+                                        <td class="currency-prefix"></td>
+                                        <td class="amount">@currency($jml_ptgn)</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </section>
 
             <section class="net-pay-section">
-                <table>
+                <table style="width: auto; margin: 0 auto;">
                     <tr>
-                        <td class="label">GAJI BERSIH DITERIMA</td>
-                        <td class="colon">:</td> 
-                        <td class="amount">@currency($tot_gaji_diterima)</td>
+                        <td style="font-size: 14px; font-weight: bold; color: #2A3B47; vertical-align: middle; padding: 8px 0;">GAJI BERSIH DITERIMA</td>
+                        <td style="font-size: 14px; font-weight: bold; color: #2A3B47; vertical-align: middle; padding: 8px 10px;">:</td>
+                        <td style="font-size: 16px; font-weight: bold; color: #2A3B47; vertical-align: middle; padding: 8px 0;">@currency($tot_gaji_diterima)</td>
                     </tr>
                 </table>
             </section>

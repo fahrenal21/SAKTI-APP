@@ -1,11 +1,20 @@
 <?php $user = Auth::user(); ?>
 <div class="navbar-header">
-    <a class="navbar-brand" href="index.html"><img src="{{ URL::to('/admin') }}/assets/images/logo.png"
-            alt=""></a>
+    @php
+        $dashboardUrl = '/superAdmin';
+        if($user->role->name == 'HRD') {
+            $dashboardUrl = '/hrd';
+        } elseif($user->role->name == 'Staff') {
+            $dashboardUrl = '/staff';
+        }
+    @endphp
+    <a class="navbar-brand" href="{{ $dashboardUrl }}" style="display: flex; align-items: center;">
+        <img src="{{ URL::to('/admin') }}/assets/images/logo-sakti.png" alt="SAKTI" style="height: 24px; width: auto;">
+        <span style="margin-left: 10px; font-size: 15px; font-weight: 600; color: #fff; letter-spacing: 1px;">SAKTI</span>
+    </a>
 
     <ul class="nav navbar-nav visible-xs-block">
-        <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
-        <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        <!-- Mobile toggles removed as requested -->
     </ul>
 </div>
 

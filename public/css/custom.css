@@ -1,0 +1,577 @@
+/* SAKTI Theme - Modern Enhancement */
+/* This file overrides template defaults for header and sidebar */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Font - Only for text elements, NOT icons */
+body,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.panel-title,
+.media-heading,
+label,
+input,
+select,
+textarea,
+button,
+.navigation>li>a>span,
+.dropdown-menu>li>a,
+.navbar-text,
+.footer,
+td,
+th {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Background */
+body.navbar-top {
+    background: #f0f2f5 !important;
+}
+
+/* ============================================
+   HEADER / TOP NAVBAR
+   ============================================ */
+/* Main Navbar Container */
+.navbar.navbar-inverse.navbar-fixed-top {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 0 20px !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+}
+
+/* Logo Area */
+.navbar.navbar-inverse .navbar-header {
+    background: transparent !important;
+    width: auto !important;
+    min-width: auto !important;
+    height: 60px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    float: none !important;
+}
+
+.navbar.navbar-inverse .navbar-brand {
+    padding: 0 !important;
+    height: 60px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    margin: 0 150px 0 0 !important;
+    float: none !important;
+}
+
+.navbar.navbar-inverse .navbar-brand img {
+    height: 28px !important;
+    width: auto !important;
+    margin: 0 12px 0 0 !important;
+    display: block !important;
+}
+
+.navbar.navbar-inverse .navbar-brand span {
+    font-size: 19px !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 600 !important;
+    line-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    color: #fff !important;
+}
+
+/* RIGHT CONTAINER - CRITICAL: Override Bootstrap collapse */
+.navbar.navbar-inverse .navbar-collapse {
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: 60px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    float: none !important;
+    overflow: visible !important;
+}
+
+/* CRITICAL: Force collapsed state to still show as flex */
+.navbar.navbar-inverse .navbar-collapse.collapse {
+    display: flex !important;
+    height: 60px !important;
+}
+
+/* TOGGLE BUTTON */
+.navbar.navbar-inverse .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+.navbar.navbar-inverse .navbar-nav>li {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+}
+
+.navbar.navbar-inverse .navbar-nav>li>a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    height: 40px !important;
+    width: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    line-height: 1 !important;
+}
+
+.navbar.navbar-inverse .navbar-nav>li>a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+}
+
+.navbar.navbar-inverse .navbar-nav>li>a>i {
+    font-size: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    display: block !important;
+}
+
+/* ONLINE BADGE - Next to sidebar toggle */
+.navbar.navbar-inverse .navbar-text {
+    margin: 0 0 0 32px !important;
+    /* 32px from toggle */
+    padding: 0 !important;
+    float: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 60px !important;
+    line-height: 60px !important;
+}
+
+.navbar.navbar-inverse .navbar-text .label {
+    padding: 6px 14px !important;
+    font-size: 11px !important;
+    border-radius: 20px !important;
+    line-height: 1 !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 24px !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    vertical-align: middle !important;
+}
+
+/* USER MENU - Far Right */
+.navbar.navbar-inverse .navbar-right {
+    margin: 0 80px 0 auto !important;
+    /* Push to right but with 20px padding from edge */
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 60px !important;
+    float: none !important;
+}
+
+.navbar.navbar-inverse .navbar-right .dropdown-user {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.navbar.navbar-inverse .navbar-right .dropdown-user>a {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    height: 40px !important;
+    padding: 0 12px !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    transition: background 0.2s !important;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+.navbar.navbar-inverse .navbar-right .dropdown-user>a:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.navbar.navbar-inverse .navbar-right .dropdown-user>a>span {
+    margin: 0 10px 0 0 !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+.navbar.navbar-inverse .navbar-right .dropdown-user>a>.caret {
+    margin: 0 !important;
+    border-top-color: rgba(255, 255, 255, 0.6) !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+/* Dropdown Menu */
+.dropdown-user>a>span {
+    margin-right: 10px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+.dropdown-user .img-circle {
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+    padding: 8px 0 !important;
+    margin-top: 10px !important;
+    right: 0 !important;
+    left: auto !important;
+    min-width: 200px !important;
+}
+
+.dropdown-menu>li>a {
+    padding: 10px 20px !important;
+    transition: all 0.15s ease !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: #f1f5f9 !important;
+    color: #1e293b !important;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar-main {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%) !important;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sidebar-main .sidebar-content {
+    background-color: transparent !important;
+}
+
+.sidebar-main .sidebar-category {
+    background-color: transparent !important;
+}
+
+.sidebar-main .category-content {
+    background-color: transparent !important;
+}
+
+/* User Profile in Sidebar */
+.sidebar-user {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 20px 16px !important;
+}
+
+.sidebar-user .media {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.sidebar-user .img-circle {
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar-user .media-heading {
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+}
+
+.sidebar-user .text-muted,
+.sidebar-user .text-size-mini {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Navigation Header */
+.navigation .navigation-header {
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+    text-transform: uppercase !important;
+    padding: 20px 20px 10px !important;
+}
+
+.navigation .navigation-header>i {
+    color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Navigation Items */
+.sidebar-main .navigation>li {
+    margin: 2px 10px !important;
+}
+
+.sidebar-main .navigation>li>a {
+    color: rgba(255, 255, 255, 0.75) !important;
+    border-radius: 8px !important;
+    padding: 11px 16px !important;
+    transition: all 0.2s ease !important;
+}
+
+.sidebar-main .navigation>li>a:hover,
+.sidebar-main .navigation>li>a:focus {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    transform: translateX(2px);
+}
+
+.sidebar-main .navigation>li.active>a,
+.sidebar-main .navigation>li.active>a:hover,
+.sidebar-main .navigation>li.active>a:focus {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+}
+
+.sidebar-main .navigation>li.active>a:focus {
+    background-color: #3b82f6 !important;
+    color: #fff !important;
+}
+
+/* Navigation Icons */
+.sidebar-main .navigation>li>a>i {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.sidebar-main .navigation>li:hover>a>i,
+.sidebar-main .navigation>li.active>a>i {
+    color: #fff !important;
+}
+
+/* Submenu */
+.sidebar-main .navigation>li>ul {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.sidebar-main .navigation>li>ul>li>a {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.sidebar-main .navigation>li>ul>li>a:hover,
+.sidebar-main .navigation>li>ul>li.active>a {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+/* ============================================
+   ALERTS / INFO PANELS
+   ============================================ */
+.panel.bg-info {
+    background-color: #dbeafe !important;
+    border: none !important;
+}
+
+.panel.bg-info .panel-heading {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.panel.bg-info h6,
+.panel.bg-info em,
+.panel.bg-info .panel-heading {
+    color: #1e40af !important;
+}
+
+.panel.bg-success {
+    background-color: #dcfce7 !important;
+}
+
+.panel.bg-success h6,
+.panel.bg-success em {
+    color: #166534 !important;
+}
+
+.panel.bg-warning {
+    background-color: #fef3c7 !important;
+}
+
+.panel.bg-warning h6,
+.panel.bg-warning em {
+    color: #92400e !important;
+}
+
+.panel.bg-danger {
+    background-color: #fee2e2 !important;
+}
+
+.panel.bg-danger h6,
+.panel.bg-danger em {
+    color: #991b1b !important;
+}
+
+/* ============================================
+   PANELS / CARDS
+   ============================================ */
+.panel {
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+.panel-flat {
+    border: none !important;
+}
+
+.panel-heading {
+    border-radius: 10px 10px 0 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+.panel-title {
+    font-weight: 600 !important;
+    color: #1e293b !important;
+}
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+.page-header-default {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: #fff !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+.footer a {
+    color: #3b82f6 !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+    border-radius: 6px !important;
+}
+
+.btn-primary {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+}
+
+.btn-success {
+    background-color: #22c55e !important;
+    border-color: #22c55e !important;
+}
+
+.btn-danger {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+.form-control {
+    border-radius: 6px !important;
+    border-color: #e5e7eb !important;
+}
+
+.form-control:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+.table>thead>tr>th {
+    background-color: #f8fafc !important;
+    font-weight: 600 !important;
+    color: #475569 !important;
+    border-bottom: 2px solid #e5e7eb !important;
+}
+
+.table>tbody>tr:hover {
+    background-color: #f8fafc !important;
+}
+
+/* ============================================
+   LABELS
+   ============================================ */
+.label {
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+}
+
+/* ============================================
+   SCROLLBAR for Sidebar
+   ============================================ */
+.sidebar-main::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar-main::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-main::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
